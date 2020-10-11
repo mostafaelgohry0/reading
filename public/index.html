@@ -1,0 +1,99 @@
+<!doctype  html>
+
+<html>
+
+    <head>
+    <title>  wellcome</title>
+    
+    <meta charset="utf-8">
+       
+        <link rel="icon" href="img/">
+        <link rel="stylesheet"  href="css/bootstrap.css">
+        <link rel="stylesheet"  href="css/mycss.css">
+        <link rel="stylesheet"  href="css/animate.css">
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
+         <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!--IE-->
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!--FOR mobile-->
+    
+    
+        
+        
+        
+        
+
+    
+    </head>
+    
+    
+    <!------------------------------------------------------------>
+    
+    
+    <body>
+         <br> <br>
+        
+        <h1> <center> WELLCOME  </center> </h1>
+        <br><br>
+  
+  <div class="container">      
+    <section class="login">
+      <form method="post">
+
+
+
+  <div class="form-group " >   
+          
+    <h2 style="text-align: center;">Email address</h2> 
+    <input type="email"  name="email" class="form-control"  id ="input-btn" placeholder="Email">
+  </div>
+
+
+  <br>
+
+ <div class="form-group  " > 
+    <h2  style="text-align: center;">Password</h2>
+    <input type="password"   name="password" class="form-control" id ="input-btn"  placeholder="Password">
+  </div>
+
+  <br>
+
+  <div class="checkbox">
+   
+  
+ <button id="loginbutton" type="submit"   name="login"  class="btn btn-primary btn-lg btn-block">LOG IN </button>
+
+  <h3>  <center>  or  <a href = "sign" > sign up</a> </center>   </h3>
+
+  
+</div>
+
+          
+          
+<script>
+  $('#myButton').on('click', function () {
+    var $btn = $(this).button('loading')
+    // business logic...
+    $btn.button('reset')
+  })
+</script>
+
+
+          
+</form>
+    
+        </section>
+    
+    
+    
+       <!-----------------------------------------------> 
+    
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+        
+    <script src ="js/wow.min.js"></script>
+   <script> new WOW().init();</script>
+    
+    </body>
+
+
+
+</html>

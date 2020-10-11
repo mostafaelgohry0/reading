@@ -1,0 +1,44 @@
+<html>
+    <head>
+            <title>  USER </title>
+    
+            <meta charset="utf-8">
+               
+                <link rel="icon" href="img/">
+                <link rel="stylesheet"  href="css/bootstrap.css">
+                <link rel="stylesheet"  href="css/mycss.css">
+                <link rel="stylesheet"  href="css/animate.css">
+                <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!--IE-->
+                <meta name="viewport" content="width=device-width, initial-scale=1"> <!--FOR mobile-->
+            </head>    
+
+    </head>
+
+    <body>
+            <table class="table">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th scope="col">id </th>
+                        <th scope="col">Name </th>
+                        <th scope="col">Email </th>
+                        <th scope="col">Birth day </th>
+                        <th scope="col">Image</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <% data.forEach (function (i)  { %>
+                      <tr>
+                        <th scope="row"> <%= i._id %></th>
+                        <td> <%= i.userFristName %> <%= i.userLastName %> </td>
+                        <td> <%= i.userEmail %></td>
+                        <td> <%= i.userBirthDay.toLocaleDateString('en-US') %></td>
+                        <td> <img src=<%=i.userImage %> width="100" height="100"  > </td>
+                        
+                        <% } );%>
+                      </tr>
+                      
+                    </tbody>
+                  </table>
+    </body>
+</html>

@@ -1,0 +1,30 @@
+{
+  "name": "mean1",
+  "version": "1.0.0",
+  "description": "test mean ",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mean",
+    "node.js"
+  ],
+  "author": "mostafaelgohry",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parse": "^0.1.0",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "dotenv": "^6.2.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "formidable": "^1.2.2",
+    "jsonwebtoken": "^8.4.0",
+    "mongoose": "^5.10.4",
+    "multer": "^1.4.2",
+    "passport-jwt": "^4.0.0",
+    "socket.io": "^2.3.0"
+  }
+}

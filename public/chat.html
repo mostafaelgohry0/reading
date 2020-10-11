@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> let chat </title>
+
+
+   <meta charset="utf-8">
+       
+        <link rel="icon" href="img/">
+        <link rel="stylesheet"  href="css/bootstrap.css">
+        <link rel="stylesheet"  href="css/mycss.css">
+        <link rel="stylesheet"  href="css/animate.css">
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!--IE-->
+        <meta name="viewport" content="width=device-width, initial-scale=1"> <!--FOR mobile-->
+
+<script  src="/socket.io/socket.io.js"></script>
+
+<script src="./js/jquery-1.11.2.min.js"></script>
+<script>
+
+
+</script>
+
+</head>
+
+<body>
+
+
+
+       <!-----------------------------------------nav---------------------------->
+ <nav class="navbar navbar-inverse navbar-fixed-top">
+       <div class="container-fluid">
+          <div class="navbar-header">
+              <a class="navbar-brand" href="#"><b>USER </b></a>
+          </div>
+         <ul class="nav navbar-nav">
+             <li class="active"><a href="#memberid">  member </a></li>
+            <li><a href="#meeting">meeting</a></li>
+            <li><a href="#tasks">tasks</a></li> 
+            <li><a href="chat"> chating </a></li> 
+            
+        </ul>
+     </div>
+</nav>
+ <br> <br> <br>
+        <!----------------------------------------------------------------------------------->
+
+
+
+
+
+<div class="chatForm">   
+<form>
+	
+	<input id="chatBox" type="text" > <button class="btnchat"> send </button>
+	<ul id="messages"> </ul> 
+	<ul id="typingUser"></ul> 
+
+</form>
+</div>
+
+
+
+
+<div class = "online"> 
+
+<h1 id="loginUser"> </h1>
+<h2> online friends </h2>
+<ul id="onlineFriends"></ul> 
+</div>
+
+
+
+
+
+<script>
+
+	
+var socket = io();
+
+
+  var currentArray = [];
+	var sentUser;
+	
+
+
+  $(function () {
+    var socket = io();
+
+    $('form').submit(function(){
+      socket.emit('chat message', $('#chatBox').val() + "|" + sentUser);
+      $('#chatBox').val('');
+      return false;
+    });
+
+
+
+socket.on('connect',function(){
+
+	console.log('id : ' + socket.id);
+})
+
+
+
+     socket.on('chat message', function(msg){
+
+       var totalMsg = msg.split('|');
+
+      //  return to orginal 
+      //$('#messages li').css("background-color","#98cee2");
+      
+      document.getElementById('typingUser').innerHTML = "";
+
+       document.getElementById('messages').innerHTML += ' <p class="message"> <div class="name">' + totalMsg[1] + " : "+ '</div>' +  totalMsg[0] + '</p>' 
+      //$('#messages').append($('<li>').text(totalMsg[0]));
+      //$('#messages').append($('<li>').text(totalMsg[1]));
+
+       if(totalMsg[1]==sentUser){
+        //document.getElementById('#messages li').style.font-size = 300px;
+       // $('#messages li').css("background-color","red");
+      };
+
+
+
+
+     // document.getElementById('messages').append(msg);
+      
+    }); 
+
+
+
+
+    socket.on('logedInUsers',function(recivedArray){
+  		console.log("hi from client " + recivedArray);
+  	
+
+  	    ///// we have  3 array 
+  	    //                      1- currentArray that hold users currently loged in 
+  	    //                      2- recivedArray that send from server every time interval  = user 
+  	    //                      3- diffArray that contain differnce between 1 and 2 
+        
+  
+  	    var diffArray = $(recivedArray).not(currentArray).get();
+  	    var diffArrayLength =diffArray.length;
+  	   
+  	    
+  		for(var i=0 ; i<diffArrayLength ; i++ ){
+  		$('#onlineFriends').append($('<li>').text(diffArray[i]));      /// display users 
+  		currentArray.push(diffArray[i]);
+
+  		}
+
+			
+
+	
+			
+  		
+  		$('#onlineFriends li').remove();
+  		 
+  	    var l =recivedArray.length;
+  		for(var i=0 ; i<l ; i++ ){
+  		$('#onlineFriends').append($('<li>').text(recivedArray[i]));      /// display users 
+  		//currentArray.push(diffArray[i]);
+     }
+
+  	});
+
+
+    socket.on('user',function(user){
+    	document.getElementById('loginUser').innerHTML="you login as : " + user;
+
+    	//socket.emit('chat message', user);
+    	sentUser= user;     /// set person who loged in and sent his name by the massage he sent 	
+  	})
+
+
+
+
+	document.getElementById('chatBox').addEventListener('keypress',function(){
+		
+		socket.emit('typing',sentUser);
+	});
+
+	socket.on('typing',function(user){
+
+         document.getElementById('typingUser').innerHTML = "";
+
+		 document.getElementById('typingUser').innerHTML += '<p>' + user + ' : is typing now ' +'</p>';
+	})
+
+		});
+
+
+</script>
+
+
+ 
+</body>
+
+</html>

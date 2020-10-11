@@ -1,0 +1,71 @@
+<!doctype  html>
+
+<html>
+
+    <head>
+    <title>  USER </title>
+    
+    <meta charset="utf-8">
+       
+       
+        <link rel="stylesheet"  href="css/bootstrap.css">
+        <link rel="stylesheet"  href="css/mycss.css">
+        <link rel="stylesheet"  href="css/animate.css">
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!--IE-->
+        <meta name="viewport" content="width=device-width, initial-scale=1"> <!--FOR mobile-->
+    </head>    
+    
+    <body>
+        
+           
+        <!-----------------------------------------nav---------------------------->
+ <nav class="navbar navbar-inverse navbar-fixed-top">
+       <div class="container-fluid">
+          <div class="navbar-header">
+              <a class="navbar-brand" href="#"><b><%=myData.userFristName%> <%=myData.userLastName%>    </b></a>
+          </div>
+         <ul class="nav navbar-nav">
+             <li class="active"><a href="#memberid">  member </a></li>
+            <li><a href="#meeting">meeting</a></li>
+            <li><a href="#tasks">tasks</a></li> 
+            <li><a href="chat"> chating </a></li> 
+            
+        </ul>
+     </div>
+</nav>
+ <br> <br> <br>
+        <!----------------------------------------------------------------------------------->
+
+         <div class="container-fluid">
+             
+           <div id="memberid">
+         <hr>
+                      <div class="row">
+                 
+                <div  id="photomember" class="col-xs-12 col-sm-4 col-lg-3">  <img src="<%=myData.userImage%>"  class="img-rounded" alt="User photo" width="220" height="216"> </div>
+        
+                    
+                    <div  id="memberdata" class="col-xs-12 col-sm-6 col-lg-8">
+                        <h1 >name &nbsp; &nbsp;&nbsp; &nbsp;    : </h1>  <h2> <%=myData.userFristName%> <%=myData.userLastName%>   </h2> <hr>
+                         <h1>Adress  &nbsp; &nbsp;&nbsp; : </h1>  <h2>  <%=myData.userAdress%>   </h2> <hr>
+                         <h1>birthday&nbsp; &nbsp; : </h1>  <h2>  <%=myData.userBirthDay.toDateString()%> </h2> <hr>
+                    </div>
+        
+                 </div> 
+                          <hr>
+             </div>
+        
+         </div>
+        
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  
+    <script src ="js/wow.min.js"></script>
+    <script> new WOW().init();</script>
+    
+    </body>
+
+
+
+</html>
