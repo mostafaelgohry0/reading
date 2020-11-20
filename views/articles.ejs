@@ -1,0 +1,174 @@
+<html>
+    <head>
+            <title>  Read </title>
+    
+            <meta charset="utf-8">
+               
+                <link rel="icon" href="img/">
+                <link rel="stylesheet"  href="css/bootstrap.css">
+                <link rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
+                <link rel="stylesheet"  href="css/articles.css">
+                <link rel="stylesheet"  href="css/mycss.css">
+                <link rel="stylesheet"  href="css/animate.css">
+                <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
+                <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        
+                <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!--IE-->
+                <meta name="viewport" content="width=device-width, initial-scale=1"> <!--FOR mobile-->
+            </head>    
+
+    </head>
+
+    <body>
+
+          
+            
+            <div class="row">
+                
+                <div class="col-md-4">
+                    
+                    <div class="input-field">
+                          <label> <h5>Select the year</h5></label>
+                         <br><br><br>
+                        
+                        <select>
+                            <option value="" disabled selected> year</option>
+                            <option value="1">2017</option>
+                            <option value="2">2016</option>
+                            <option value="3">2015</option>
+                            <option value="4">2014</option>
+                            <option value="5">2013</option>
+                            <option value="6">2012</option>
+                            <option value="7">2011</option>
+                            <option value="8">2010</option>
+                            <option value="9">2009</option>
+                            <option value="10">2008</option>
+                            
+                            
+                        </select>
+                      
+                    </div>
+                </div>
+                
+                
+                
+                
+                <div class="col-md-4">
+                    
+                    <div class="input-field">
+                          <label> <h5>Select the supervisor </h5></label>
+                         <br><br><br>
+                        
+                        <select>
+                            <option value="" disabled selected>profosser</option>
+                            <option value="1">mfnnf fjn m </option>
+                            <option value="2">fmnkmf  fjdfk</option>
+                            <option value="3">kfjksdnk</option>
+                            <option value="4">md ds mdm </option>
+                            <option value="5">2mmmc mc mc </option>
+                            <option value="6">nmckn cj jcm </option>
+                            <option value="7">cm cmm </option>
+                           
+                            
+                        </select>
+                      
+                    </div>
+                    
+                
+                </div>
+                
+            
+                
+                <div class="col-md-4">
+                    
+                     <div class="input-field">
+                          <label> <h5>Select the catageroy </h5></label>
+                         <br><br><br>
+                        
+                        <select>
+                            <option value="" disabled selected>catageroy</option>
+                            <option value="1">IOT </option>
+                            <option value="2">Embeded</option>
+                            <option value="3">Robotic</option>
+                            <option value="4">software</option>
+                            <option value="5">2mmmc mc mc </option>
+                            <option value="6">control</option>
+                            <option value="7">cm cmm </option>
+                           
+                            
+                        </select>
+                      
+                    </div>
+                
+                </div>
+            
+                
+            
+            
+            
+            
+            
+            
+            
+            </div>
+            
+            
+          
+                    <% data.forEach (function (i)  { %>
+            <div class="col-md-4"> 
+                               
+                    <div class="card">
+                        
+                          <div class="card-image waves-effect waves-block waves-light">
+                              <img class="activator" src=<%=i.image %> >
+                          </div>
+                        
+                          <div class="card-content">
+                              <span class="card-title activator grey-text text-darken-4"><%= i.title %> <i class="material-icons right">more_vert</i></span>
+                              <p><a href="#"></a></p>
+                               <hr>
+                              
+                              <ul class="projectTag">
+                                  <li class="year"><%= i.date.toLocaleDateString('en-US') %></li> 
+                                  <li class="professor"> <%= i.auther %> </li>
+                                  <li class="cata"> catag  </li>
+                              
+                              </ul>
+                          </div>
+                        
+                          <div class="card-reveal">
+                              <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+                              <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                          </div>
+                        
+                      </div>
+              
+          </div>
+          <% } );%>
+         
+          
+      
+    
+          
+          
+
+     
+        
+<!-----------------------------------------------> 
+    
+  
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+        
+        
+         
+         <script type="text/javascript" src="js/materialize.js"></script>
+          <script src="js/articles.js"></script>  
+        
+        
+        
+    <script src ="js/wow.min.js"></script>
+   <script> new WOW().init();</script>
+    
+    </body>
+</html>

@@ -14,9 +14,10 @@ router.use(bodyParser.urlencoded(
 
 
 
-router.get('/',(req,res,err)=>{
+router.get('/g',(req,res,err)=>{
 
- res.sendFile(path.join(__dirname ,"..","public" ,"index.html"));  
+ //res.sendFile(path.join(__dirname ,"..","public" ,"test.html"));  
+ res.send("hi ");
 });
 
 

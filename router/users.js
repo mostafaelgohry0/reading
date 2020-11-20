@@ -44,6 +44,10 @@ const upload = multer({
 }); 
 
 
+
+
+   
+
 router.get('/sign',(req,res,err)=>{
 
 // res.sendFile(path.join(__dirname ,"..","public" ,"sign.html"));  
@@ -51,7 +55,12 @@ res.render("sign.ejs",{checkSign:"hallo",test:"try1"});
 });
 
 
+router.get('/login',(req,res,err)=>{
 
+    res.sendFile(path.join(__dirname ,"..","public" ,"login.html"));  
+   });
+   
+   
 
 
 router.post('/',(req,res,next)=>{

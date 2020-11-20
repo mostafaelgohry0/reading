@@ -9,11 +9,13 @@ const path = require('path');
 
 var io = require('socket.io')();
 
-const mongoose = require('mongoose')
-const userRouter = require('./router/users.js')
-const checkRouter = require('./router/check.js')
-const dataRouter = require('./router/data.js')
-const chatRouter = require('./router/chat.js')
+const mongoose = require('mongoose');
+const userRouter = require('./router/users.js');
+const checkRouter = require('./router/check.js');
+const dataRouter = require('./router/data.js');
+const chatRouter = require('./router/chat.js');
+const addArticleRouter = require('./router/addarticle');
+const articlesRouter = require('./router/articles')
 
 
 
@@ -45,6 +47,8 @@ app.use('/',userRouter);
 app.use('/',checkRouter);
 app.use('/',dataRouter);
 app.use('/',chatRouter);
+app.use('/',addArticleRouter);
+app.use('/',articlesRouter);
 //app.use('/',upLoadFile);
 
 
